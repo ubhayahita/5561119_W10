@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 struct studentType
@@ -58,9 +59,12 @@ int findHighest(studentType students[]) {
     return highest;
 }
 void printAll(studentType students[]){
-    cout << "\n-----List of all students-----" << endl;
+    cout << "\n-----Students / Score / Grade-----\n";
     for (int i = 0; i < size; i++){
-        cout << i+1 << ". " << students[i].studentLName << ", " << students[i].studentFName << endl; 
+        cout << left;
+        cout << setw(20) << (students[i].studentLName + ", " + students[i].studentFName) 
+             << setw(10) << students[i].testScore 
+             << setw(10) << students[i].grade << endl; 
     }
 }
 void printHighest(studentType students[], int highest) {
@@ -75,7 +79,7 @@ void getData(studentType students[]);
 void assignGrade(studentType students[]);
 int findHighest(studentType students[]);
 void printAll(studentType students[]);
-void printHighest(studentType students[]);
+void printHighest(studentType students[], int highest);
 
 int main() {
     getData(students);
