@@ -70,7 +70,7 @@ void printAll(studentType students[]){
 void printHighest(studentType students[], int highest) {
     for (int i = 0; i < size; i++) {
         if (students[i].testScore == highest) {
-            cout << "\nStudent who got the highest score is: " << students[i].studentLName << ", " << students[i].studentFName << endl;
+            cout << "\nStudent who got the highest score (" <<  highest << "): " << students[i].studentLName << ", " << students[i].studentFName << endl;
         }
     }
 }
